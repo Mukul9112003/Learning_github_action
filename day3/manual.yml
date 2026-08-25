@@ -1,0 +1,9 @@
+name: "Manual"
+on: 
+    workflow_dispatch
+jobs:
+    jobs1:
+        runs-on: ubuntu-latest
+        steps:
+          - name: "Step"
+            run: echo "Manual execution successful"

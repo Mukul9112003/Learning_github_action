@@ -1,0 +1,13 @@
+name: "Final"
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedules:
+    - corn: "0 9 * * *"
+jobs:
+  jobs1:
+    runs-on: ununtu-latest
+    steps:
+      - name: "steps1"
+        run: echo "Hello this is my final " 

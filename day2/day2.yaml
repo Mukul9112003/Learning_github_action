@@ -1,0 +1,8 @@
+name: "Day2"
+on: push
+job1:
+  runs-on: ubuntu-latest
+  step:
+    step1:
+      - name: "First Step"
+        run: echo "Hello World"

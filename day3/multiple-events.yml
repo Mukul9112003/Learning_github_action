@@ -1,0 +1,12 @@
+name: multiple-events
+on: 
+    push:
+    workflow_dispatch:
+    schedule:
+        - cron: "0 9 * * *"
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "step 1"
+              run: echo "Multiple-events run "

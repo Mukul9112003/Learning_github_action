@@ -1,0 +1,11 @@
+name: "MAin"
+on:
+  push:
+    branches:
+      - main
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: "step 1"
+        run: echo "Hello from Main Branch"
