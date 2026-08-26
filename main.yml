@@ -1,0 +1,19 @@
+name: Main workflow
+on:
+  workflow-dispatch
+jobs:
+  Ubuntu Job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: echo "Ubuntu Job"
+  Windows Job:
+    runs-on: windows-latest
+    steps:
+      - name: Step 1
+        run: echo "Windows Job"
+  macOS Job:
+    runs-on: macos-latest
+    steps:
+      - name: Step 1
+        run: echo "macOS Job"
