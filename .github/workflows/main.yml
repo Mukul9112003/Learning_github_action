@@ -1,6 +1,6 @@
 name: Main workflow
 on:
-  workflow-dispatch:
+  workflow_dispatch:
 jobs:
   Ubuntu_job:
     name: Ubuntu Job
