@@ -1,0 +1,28 @@
+name: Main workflow
+on:
+  workflow-dispatch:
+jobs:
+  Ubuntu_job:
+    name: Ubuntu Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Operating System
+        run: echo $RUNNER_OS
+
+      - name: Current Directory
+        run: pwd
+
+      - name: Git Version
+        run: git --version
+  Windows_job:
+    name: Windows Job
+    runs-on: windows-latest
+    steps:
+      - name: Step 1
+        run: echo "Windows Job"
+  macos_job:
+    name: macOS Job
+    runs-on: macos-latest
+    steps:
+      - name: Step 1
+        run: echo "macOS Job"
