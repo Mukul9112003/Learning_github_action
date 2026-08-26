@@ -1,0 +1,32 @@
+name: Week1 Completed
+on:
+   push:
+    branches:
+        - main
+   workflow_dispatch:
+jobs:
+    job1:
+        name: System info
+        runs-on: ubuntu-latest
+        steps:
+            - name: Step1
+              run: echo $RUNNER_OS
+            - name: Current Directory
+              run: pwd
+            - name: List Files
+              run: ls -la
+            - name: Current User
+              run: whoami
+    job2:
+        name: System info
+        runs-on: ubuntu-latest
+        steps:
+            - name: Step1
+              run: git --version
+            - name: Current Directory
+              run: pwd
+
+            - name: List Files
+              run: ls -la
+            - name: Current User
+              run: whoami
