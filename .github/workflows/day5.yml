@@ -1,0 +1,24 @@
+name: Day5
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+    workflow_dispatch:
+    schedule:
+        - cron: "0 9 * * *"
+jobs:
+    job1:
+        name: "Day 5 job"
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: currect directory
+              run: pwd
+            - name: all files
+              run: ls -la
+            - name: git version
+              run: git --version
+            - name: latest 3 commits
+              run: git log --oneline -3
