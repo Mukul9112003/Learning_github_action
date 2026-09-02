@@ -5,22 +5,21 @@ on:
       - main
   pull_request:
   schedule:
-    cron: "0 9 * * *"
+    - cron: "0 9 * * *"
   workflow_dispatch:
 jobs:
   job1:
     name: this is first job1
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-      step1:
         - name: access to repository
-          uses: action/checkout@v4
+          uses: actions/checkout@v4
         - name: repository name
           run: echo $GITHUB_REPOSITORY
         - name: ref name
           run: echo $GITHUB_REF
-        - name: workplace name
-          run: echo $GITHUB_WORKPLACE
+        - name: workflow name
+          run: echo $GITHUB_WORKFLOW
         - name: workflow name
           run: echo $GITHUB_WORKSPACE
         - name: commet name
