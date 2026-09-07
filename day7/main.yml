@@ -1,0 +1,24 @@
+name: Day7
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron : "0 9 *  * *"
+env:
+  APP_NAME: GitHub Actions Practice
+  ENVIRONMENT: Development
+jobs:
+  job1:
+    name: Day6 task
+    runs-on: ubuntu-latest
+    steps:
+      - name: envirnment varibale
+        run: |
+          echo "Application Name $APP_NAME" 
+          echo "Envirnment $Envirnment"
+      - name: access repro
+        uses: actions/checkout@v4
+      - name: other varibale
+        run: |
+          echo "$GitHub_REPROSITORY"
+          echo "$GitHub_ACTOR"
+          echo "RUNNER_OS"
