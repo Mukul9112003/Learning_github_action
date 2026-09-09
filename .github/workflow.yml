@@ -38,7 +38,7 @@ jobs:
       - name: "step3"
         run: | 
           echo $BROTHER
-          if [~z "$TOKEN"]: then 
+          if [ -z "$TOKEN"]: then 
             echo "Not PRESENT"
             exit 1
           else
