@@ -1,0 +1,39 @@
+name: Day9
+on:
+  push:
+    branchs:
+      - main
+  pull_requests:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 9 * * *"
+env:
+  NAME: "Mukul Mehta"
+  ROLE: "Ai engineer"
+  
+jobs:
+  job1:
+    name: "Job_1"
+    runs-on: ubuntu-latest
+    env:
+      TOKEN: {{$DEMO_TOKEN}}
+      API_KEY: {{$secret.API_KEY}}
+    steps:
+      - name: "step1"
+        uses: action/checkout@v4
+      - name: "step2"
+        run: git log --oneline
+      - name: github_repro
+        run: |
+          echo $GITHUB_REPROSITORY
+          echo $GITHUB_REF
+          echo $GITHUB_SHA
+          echo $RUNNER_OS
+          echo $GITHUB_RUN_NUMBER
+          echo $GITHUB_RUN_ID
+          echo $GITHUB_WORKSPACE
+          echo $GITHUB_WORKFLOW
+          echo $GITHUB_ACTOR
+          echo "BROTHER=NITIN" >> GITHUB_ENV
+      - name: "step3"
+        run: echo $BROTHER
