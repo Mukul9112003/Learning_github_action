@@ -61,17 +61,15 @@ jobs:
         name: build_report
         runs-on: ubuntu-latest
         needs: Test
-        env:
-            BUILD_NUMBER: $GITHUB_BUILD_NUMBER
         steps:
             - name: checkout
               uses: actions/checkout@v4
             - name: create
               run: |
-               echo "RUN_NUMBER=2.0.$GITHUB_RUN_NUMBER" >>$GITHUB_ENV
+               echo "BUILD_VERSION=2.0.$GITHUB_RUN_NUMBER" >>$GITHUB_ENV
             - name: print
               run: |
-                echo Building application version: $RUN_NUMBER
+                echo Building application version: $BUILD_VERSION
             - name: build
               run: |
                 if [ -z "$BUILD_VERSION"]; then
