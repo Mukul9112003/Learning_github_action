@@ -14,7 +14,7 @@ jobs:
         name: validate_report 
         runs-on: ubuntu-latest
         env:
-            USER: ${{ secrets.API_KEY}}
+            USER: ${{ secrets.API_KEY }}
         steps:
             - name: checkout
               uses: actions/checkout@v4
@@ -40,7 +40,7 @@ jobs:
                echo $BROTHER
             - name: check
               run: |
-                if [ ~z "$USER"]; then
+                if [ -z "$USER"]; then
                     echo "not present"
                     exit 1
                 else
@@ -48,7 +48,7 @@ jobs:
                 fi
     Test:
         name: test_report
-        runs-on: ubunti_latest
+        runs-on: ubuntu_latest
         needs: Validate
         steps:
             - name: checkout
@@ -74,7 +74,7 @@ jobs:
                 echo Building application version: $RUN_NUMBER
             - name: build
               run: |
-                if [ ~z "$BUILD_VERSION"]; then
+                if [ -z "$BUILD_VERSION"]; then
                   echo Fail
                   exit 1
                 else
