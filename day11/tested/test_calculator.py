@@ -1,4 +1,4 @@
-from day11.app.calculator import add, multiply, subtract
+from day11.apps.calculator import add, multiply, subtract
 
 
 def test_add():
