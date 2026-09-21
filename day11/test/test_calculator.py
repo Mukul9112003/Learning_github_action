@@ -1,4 +1,4 @@
-from day11.app.calculator import add, subtract, multiply
+from day11.app.calculator import add, multiply, subtract
 def test_add():
     assert add(2,5)==7
 def test_subtract():
